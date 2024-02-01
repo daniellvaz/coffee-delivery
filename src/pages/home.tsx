@@ -1,30 +1,15 @@
-import { ShoppingCart, Package, Timer, Coffee, MapPin } from "@phosphor-icons/react"
+import { ShoppingCart, Package, Timer, Coffee } from "@phosphor-icons/react";
 
-import Image from '../assets/image.png';
-import Logo from '../assets/Logo.png';
+import Image from "../assets/image.png";
+
+import CoffeeImage from "../assets/Americano.png";
+
+import Catalog from "../components/ui/catalog";
 
 export default function Home() {
   return (
-    <main className="w-full h-screen bg-base-background">
-      <nav className="w-full py-8">
-        <div className="max-w-[1120px] w-full m-auto flex itesm-center justify-between">
-          <img src={Logo} alt="Coffee delivery logo" />
-
-          <ul className="flex gap-4">
-            <li>
-              <button className="p-2 flex gap-1 items-center bg-brand-Purple-light rounded-sm text-brand-purple-dark text-sm">
-                <MapPin fontWeight="bold" size={16} />
-
-                Curitiba, PR
-              </button>
-            </li>
-            <li>
-
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <header className="w-full h-[544px] bg-[url('/src/assets/background.svg')] bg-cover bg-no-repeat">
+    <main className="w-full h-screen">
+      <header className="w-full min-h-[544px] bg-[url('/src/assets/background.svg')] bg-cover bg-no-repeat">
         <div className="max-w-[1120px] w-full h-full m-auto flex items-center justify-between">
           <div>
             <h1 className="text-base-text text-4xl font-bold font-baloo-2">
@@ -42,34 +27,55 @@ export default function Home() {
                   <ShoppingCart size={16} color="#fff" />
                 </div>
 
-                <p className="text-base-text text-base">Compra simples e segura</p>
+                <p className="text-base-text text-base">
+                  Compra simples e segura
+                </p>
               </div>
               <div className="flex gap-4 items-center">
                 <div className="w-8 h-8 rounded-full bg-base-text flex items-center justify-center">
                   <Package size={16} color="#fff" />
                 </div>
 
-                <p className="text-base-text text-base">Compra simples e segura</p>
+                <p className="text-base-text text-base">
+                  Compra simples e segura
+                </p>
               </div>
               <div className="flex gap-4 items-center">
                 <div className="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center">
                   <Timer size={16} color="#fff" />
                 </div>
 
-                <p className="text-base-text text-base">Compra simples e segura</p>
+                <p className="text-base-text text-base">
+                  Compra simples e segura
+                </p>
               </div>
               <div className="flex gap-4 items-center">
                 <div className="w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center">
                   <Coffee size={16} color="#fff" />
                 </div>
 
-                <p className="text-base-text text-base">Compra simples e segura</p>
+                <p className="text-base-text text-base">
+                  Compra simples e segura
+                </p>
               </div>
             </div>
           </div>
           <img src={Image} alt="" />
         </div>
       </header>
+
+      <section>
+        <div className="max-w-[1120px] w-full m-auto py-8">
+          <h2 className="text-2xl text-base-text font-bold">Nossos cafés</h2>
+
+          <Catalog
+            title="Expresso Tradicional"
+            description="O tradicional café feito com água quente e grãos moídos"
+            image={CoffeeImage}
+            tags={["tradicional"]}
+          />
+        </div>
+      </section>
     </main>
-  )
+  );
 }
